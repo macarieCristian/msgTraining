@@ -1,4 +1,4 @@
-package edu.msg.ro.persistence.user.entity;
+package ro.msg.edu.jbugs.userManagement.persistence.entity;
 
 import lombok.*;
 
@@ -12,9 +12,9 @@ import java.util.Set;
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true, exclude = {"users","permissions"})
-@ToString(exclude = {"users","permissions"})
+@ToString(callSuper = true, exclude = {"users","permissions"})
 @Builder
-public class Role extends BaseEntity<Long>{
+public class Role extends BaseEntity<Long> {
 
     @Enumerated(EnumType.STRING)
     private RoleType type;
@@ -24,4 +24,6 @@ public class Role extends BaseEntity<Long>{
 
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Permission> permissions = new HashSet<>();
+
+
 }

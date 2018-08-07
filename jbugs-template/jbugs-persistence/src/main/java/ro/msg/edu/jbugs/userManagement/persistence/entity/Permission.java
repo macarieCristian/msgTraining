@@ -1,4 +1,4 @@
-package edu.msg.ro.persistence.user.entity;
+package ro.msg.edu.jbugs.userManagement.persistence.entity;
 
 import lombok.*;
 
@@ -12,7 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true, exclude = "roles")
-@ToString(exclude = "roles")
+@ToString(callSuper = true, exclude = "roles")
 @Builder
 public class Permission extends BaseEntity<Long>{
 

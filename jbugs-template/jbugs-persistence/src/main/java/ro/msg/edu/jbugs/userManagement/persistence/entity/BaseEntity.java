@@ -1,4 +1,4 @@
-package edu.msg.ro.persistence.user.entity;
+package ro.msg.edu.jbugs.userManagement.persistence.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
