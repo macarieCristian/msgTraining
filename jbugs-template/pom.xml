@@ -15,6 +15,12 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<payara.versio>4.1.1.171</payara.versio>
+		<was.javax.servlet.api>3.1.0</was.javax.servlet.api>
+		<was.javax.annotation.api>1.2</was.javax.annotation.api>
+		<was.javax.json.api>1.0</was.javax.json.api>
+		<was.javax.ws.rs.api>2.0</was.javax.ws.rs.api>
+		<jackson.jaxrs.json.version>2.9.4</jackson.jaxrs.json.version>
+		<jackson.jaxrs.json.glassfish.version>2.27</jackson.jaxrs.json.glassfish.version>
 	</properties>
 
 	<dependencyManagement>
@@ -97,6 +103,46 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.5</version>
 		</dependency>
+
+        <!--dependencies for rest ws rs-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+            <version>${was.javax.servlet.api}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <scope>provided</scope>
+            <version>${was.javax.annotation.api}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.json</groupId>
+            <artifactId>javax.json-api</artifactId>
+            <scope>provided</scope>
+            <version>${was.javax.json.api}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <scope>provided</scope>
+            <version>${was.javax.ws.rs.api}</version>
+        </dependency>
+
+        <!-- 3rd party libs -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>${jackson.jaxrs.json.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey.media</groupId>
+            <artifactId>jersey-media-json-jackson</artifactId>
+            <scope>runtime</scope>
+            <version>${jackson.jaxrs.json.glassfish.version}</version>
+        </dependency>
 
 
 

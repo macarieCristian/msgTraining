@@ -47,16 +47,16 @@ public class TestServlet extends HttpServlet {
         UserDto userDto = new UserDto();
         String message = "";
         List<UserDto> users = userService.getAllUsers();
-//        try {
-//            userDto = userService.createUser(user1);
+        try {
+            userDto = userService.createUser(user1);
 //            userService.setUserStatus(441L, UserStatus.DISABLED);
 //            userService.login("lucaal", "password");
 
             message = "success";
-//        } catch (BusinessException e) {
-//            e.printStackTrace();
-//            message = "failed!";
-//        }
+        } catch (BusinessException e) {
+            e.printStackTrace();
+            message = "failed!";
+        }
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
